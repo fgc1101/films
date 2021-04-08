@@ -11,7 +11,9 @@
         <!-- 九宫格 -->
         <div class="sudoku_row">
             <div class="sudoku_item" :class="curSelect==sudoku.id ? 'opacity':''" v-for="(sudoku,index) in sudokus" :key="index" @touchstart="touchstart" @touchend="touchend">
-                <img :src="sudoku.img_src" width="40" height="40" >
+                <router-link :to="sudoku.route">
+                    <img :src="sudoku.img_src" width="40" height="40" >
+                </router-link>
                 {{sudoku.name}}
             </div>
         </div>
@@ -24,31 +26,7 @@
     data(){
       return {
         bannerList : [],
-        sudokus:[{
-          id:0,
-          name:'飞机',
-          img_src:'/img/search.28fc050c.png'
-        },{
-          id:1,
-          name:'游戏',
-          img_src:'/img/search.28fc050c.png'
-        },{
-          id:2,
-          name:'音乐',
-          img_src:'/img/search.28fc050c.png'
-        },{
-          id:3,
-          name:'物流',
-          img_src:'/img/search.28fc050c.png'
-        },{
-          id:4,
-          name:'医院',
-          img_src:'/img/search.28fc050c.png'
-        },{
-          id:5,
-          name:'医院',
-          img_src:'/img/search.28fc050c.png'
-        }],
+        sudokus:[],
         curSelect:null
       }
     },
@@ -57,6 +35,11 @@
         console.log(res);
         this.bannerList = res.data.data
         console.log(this.bannerList);
+      });
+
+      this.$axios.get("/api/index/gridList").then((res)=>{
+        console.log(res)
+        this.sudokus = res.data.data
       })
     },
     methods:{
@@ -69,12 +52,13 @@
           }
         }
         setTimeout(function(){
-
         },200)
-      },touchend:function(){
+      },
+      touchend:function(){
         var that = this;
         that.curSelect = null;
-      }
+      },
+
     }
   }
 </script>
