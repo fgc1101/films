@@ -35,7 +35,6 @@
 
 <style scoped>
     .swipe_my{
-        margin-top: 40px;
-        height: 180px;
+        height: 200px;
     }
 </style>
