@@ -3,6 +3,10 @@
     <mt-header fixed title="首页"></mt-header>
     <router-view/>
 
+    <!--
+      <test/>
+     -->
+
     <!-- 底部导航 -->
     <mt-tabbar fixed>
       <mt-tab-item id="首页">

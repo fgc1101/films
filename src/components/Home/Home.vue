@@ -32,13 +32,10 @@
     },
     created() {
       this.$axios.get("/api/index/bannerLists").then((res) => {
-        console.log(res);
         this.bannerList = res.data.data
-        console.log(this.bannerList);
       });
 
       this.$axios.get("/api/index/gridList").then((res)=>{
-        console.log(res)
         this.sudokus = res.data.data
       })
     },
