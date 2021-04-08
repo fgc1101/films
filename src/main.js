@@ -16,6 +16,10 @@ Vue.use(MintUI)
 // 引用自己写的插件
 // Vue.use(FgcInstaller)
 
+// 引入自己封装的9宫格组件
+import Grid from './components/common/Grid'
+Vue.component(Grid.name, Grid);
+
 new Vue({
   render: h => h(App),
   router,
