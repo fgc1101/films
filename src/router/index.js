@@ -4,6 +4,7 @@ import Home from "../components/Home/Home"
 import Member from "../components/Member/Member"
 import ShopCart from "../components/ShopCart/ShopCart"
 import Search from "../components/Search/Search"
+import NewsList from "../components/News/NewsList"
 
 Vue.use(Router)
 
@@ -19,17 +20,21 @@ export default new Router({
       name: 'Home',
       component: Home
     },{
-      path: '/Member',
+      path: '/member',
       name: 'Member',
       component: Member
     },{
-      path: '/ShopCart',
+      path: '/shop_cart',
       name: 'ShopCart',
       component: ShopCart
     },{
-      path: '/Search',
+      path: '/search',
       name: 'Search',
       component: Search
+    },{
+      path: '/news/list',
+      name:'NewsList',
+      component:NewsList
     }
   ]
 })
