@@ -20,6 +20,9 @@ Vue.use(MintUI)
 import Grid from './components/common/Grid'
 Vue.component(Grid.name, Grid);
 
+import NavBar from './components/common/NavBar'
+Vue.component(NavBar.name, NavBar);
+
 new Vue({
   render: h => h(App),
   router,

@@ -1,10 +1,18 @@
 <template>
-    <h2>新闻列表</h2>
+    <div>
+        <nav-bar :title="title"/>
+    </div>
 </template>
 
 <script>
   export default {
-    name: "NewsList"
+    name: "NewsList",
+    data(){
+      return {
+        title:'新闻列表',
+        newsList:[],// 新闻列表数据
+      }
+    }
   }
 </script>
 
