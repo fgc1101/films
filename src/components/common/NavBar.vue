@@ -28,5 +28,7 @@
 </script>
 
 <style scoped>
-
+    .tmpl mt-header{
+        background-color: #C7C7C7;
+    }
 </style>
